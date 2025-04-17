@@ -140,7 +140,8 @@
             <div class="combine row">
                 <div class="col-md-12">
                     <h2>Combine</h2>
-                    <span>Enter n of your shards below and the original Mnemonic will be returned:</span>
+                    <span>Enter n of your shards below and the original Mnemonic will be returned:<br>
+                    <b>Note that the first three words, i.e. shamir39-p1 word word must be written in full.</b> For all other words, the first 4 letters are sufficient</span>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="combine-parts" class="col-sm-2 control-label">Shamir39 Shares</label>
@@ -937,11 +938,20 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             for (var j=1; j<words.length; j++) {
                 var word = words[j];
                 var wordIndex = wordlist.indexOf(word);
-                if (wordIndex == -1) {
+
+                wordPrefix = word
+                //console.log ("Cant find exact match for " + wordPrefix + ", looking for that as a prefix");
+
+                // Try to make this work if we just have the first 4 of a longer word
+                // (first 4 should be unique)
+                word = wordlist.find(w => w.startsWith(word)) 
+                if (word == null) {
                     return {
-                        error: "Word not in wordlist: " + word
+                        error: "Word not in wordlist and cant find prefix: " + word
                     }
                 }
+                console.log ("Found " + word + " as a word with prefix " + wordPrefix)
+                
                 var wordBin = lpad(wordIndex.toString(2), 11);
                 mBinStr = mBinStr + wordBin.substring(1,6);
                 oBinStr = oBinStr + wordBin.substring(6,11);
@@ -970,7 +980,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var wordIndex = wordlist.indexOf(word);
                 if (wordIndex == -1) {
                     wordPrefix = word
-                    console.log ("Cant find exact match for " + wordPrefix + ", looking for that as a prefix");
+                    //console.log ("Cant find exact match for " + wordPrefix + ", looking for that as a prefix");
 
                     // Try to make this work if we just have the first 4 of a longer word
                     // (first 4 should be unique)
@@ -981,7 +991,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                         }
                     }
                     console.log ("Found " + word + " as a word with prefix " + wordPrefix)
+                    var wordIndex = wordlist.indexOf(word);
                 }
+                
+                console.log("Test: " + wordIndex)
                 var wordBin = lpad(wordIndex.toString(2), 11);
                 partBin = partBin + wordBin;
             }
