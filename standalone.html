@@ -81,113 +81,17 @@
         </style>
     </head>
     <body>
-        <div class="container">
-
-            <p class="version">Version: Prototype-1</p>
-            <div class="text-center text-extreme-danger">
-            <p class="h1">
-            <strong>This is a prototype.</strong>
-            </p>
-            <p class="h2">
-            This tool should only be used for experiments.
-            </p>
-            <p class="h2">
-            There are no alternative implementations, meaning you are
-            <em>totally dependent on this tool</em> if you use it.
-            That is a dangerous situation to be in.
-            </p>
-            <p class="h2">
-                <a href="https://github.com/iancoleman/shamir39/issues">
-                Please share questions, comments and concerns on github
-                </a>
-            </p>
-            </div>
-            <div>
-            <h3>
-            Changelog
-            </h3>
-            <p>
-            <strong>Prototype-1</strong>
-            -
-            for shares starting with shamir39-p1
-            </p>
-            <ul>
-                <li>
-                    <strong>Breaking Change</strong>
-                    Change bits for shamir shares from 12 to 11.
-                    See
-                    <a href="https://github.com/iancoleman/shamir39/issues/2">
-                        https://github.com/iancoleman/shamir39/issues/2
-                    </a>
-                </li>
-                <li>
-                    Change version word from shamir39 to shamir39-p1
-                </li>
-                <li>
-                    Add version text
-                </li>
-                <li>
-                    View in the browser using
-                    <a href="https://web.archive.org/web/20171003054223/iancoleman.github.io/shamir39">
-                        archive.org/iancoleman.github.io/shamir39
-                    </a>
-                    <br>
-                    or download from
-                    <a href="https://github.com/iancoleman/shamir39/raw/b12d58d6d71a4db71ac9796e7d82c0a7691dd973/standalone.html">
-                        github.com/iancoleman/shamir39
-                    </a>
-                    (right-click save)
-                </li>
-            </ul>
-            <p>
-            <strong>Initial Unversioned Release</strong>
-            -
-            for shares starting with shamir39
-            </p>
-            <ul>
-                <li>
-                    View in the browser using
-                    <a href="https://web.archive.org/web/20170911001146/iancoleman.github.io/shamir39">
-                        archive.org/iancoleman.github.io/shamir39
-                    </a>
-                    <br>
-                    or download from
-                    <a href="https://github.com/iancoleman/shamir39/raw/ece6bde547ac2587067f8b04060b612441a625e5/standalone.html">
-                        github.com/iancoleman/shamir39
-                    </a>
-                    (right-click save)
-                </li>
-            </ul>
-            </div>
-
             <hr>
 
             <h1 class="text-center">Shamir39 Tool</h1>
             <div class="split row">
                 <div class="col-md-12">
                     <h2>Split</h2>
+                    <span>Enter your 24 word mnemonic below; select your shards (e.g. n of m) and the n parts will be produced:</span>:
+
                     <form class="form-horizontal" role="form">
                         <div class="form-group generate-container">
                             <label class="col-sm-2 control-label"></label>
-                            <div class="col-sm-10">
-                                <div class="form-inline">
-                                    <div class="input-group-inline">
-                                        <span>Generate a random mnemonic, or enter your own below</span>:
-                                        <button class="btn generate">Generate</button>
-                                        <select id="strength" class="strength form-control">
-                                            <option value="3">3</option>
-                                            <option value="6">6</option>
-                                            <option value="9">9</option>
-                                            <option value="12">12</option>
-                                            <option value="15" selected>15</option>
-                                            <option value="18">18</option>
-                                            <option value="21">21</option>
-                                            <option value="24">24</option>
-                                        </select>
-                                        <span>words</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Mnemonic Language</label>
@@ -236,6 +140,7 @@
             <div class="combine row">
                 <div class="col-md-12">
                     <h2>Combine</h2>
+                    <span>Enter n of your shards below and the original Mnemonic will be returned:</span>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="combine-parts" class="col-sm-2 control-label">Shamir39 Shares</label>
@@ -253,130 +158,8 @@
                 </div>
             </div>
 
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>More Info</h2>
-                    <h3>Shamir39 <span class="small">Draft Specification</span></h3>
-                    <p>
-                        Read more about how Shamir Mnemonics are encoded and decoded in the
-                        <a href="https://github.com/iancoleman/shamir39/blob/master/specification.md" target="_blank">Draft Shamir39 Specification</a>.
-                    </p>
-                    <p>
-                        The specification is open to feedback.
-                        Feedback can be provided by raising a new issue in the
-                        <a href="https://github.com/iancoleman/shamir39/issues" target="_blank">github repostiory iancoleman/shamir39</a>.
-                    </p>
-                    <h3>BIP39 <span class="small">Mnemonic code for generating deterministic keys</span></h3>
-                    <p>
-                        Read more at the
-                        <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">official BIP39 spec</a>
-                    </p>
-                    <h3>Shamir's Secret Sharing Scheme</h3>
-                    <p>
-                        Read more
-                        <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">on wikipedia</a>.
-                    </p>
-                    <p>
-                        This page uses a custom implementation of SSSS based on
-                        <a href="https://github.com/amper5and/secrets.js/" target="_blank">amper5and/secrets.js</a>.
-                    </p>
-                    <p>
-                        The implementation used on this page can be found in
-                        <a href="https://github.com/iancoleman/shamir39/blob/master/src/js/shamir39.js" target="_blank">Shamir39 Library</a>
-                        (currently under active development).
-                    </p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <h2>Offline Usage</h2>
-
-                    <p>
-                    You can use this tool without having to be online.
-                    </p>
-                    <p>
-                    In your browser, select file save-as, and save this page
-                    as a file.
-                    </p>
-                    <p>
-                    Double-click that file to open it in a browser
-                    on any offline computer.
-                    </p>
-                    <p>
-                    <span>Alternatively, download the file from the repository</span>
-                    -
-                    <a href="https://github.com/iancoleman/shamir39">https://github.com/iancoleman/shamir39</a>
-                    </p>
-
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <h2>This project is 100% open-source code</h2>
-
-                    <p>
-                        <span>Get the source code from the repository</span>
-                        -
-                        <a href="https://github.com/iancoleman/shamir39" target="_blank">
-                            https://github.com/iancoleman/shamir39
-                        </a>
-                    </p>
-
-                    <h3>Libraries</h3>
-
-                    <p>
-                        <span>Shamir39 Library (under development) - </span>
-                        <a href="https://github.com/iancoleman/shamir39/blob/master/src/js/shamir39.js" target="_blank">
-                            https://github.com/iancoleman/shamir39/blob/master/src/js/shamir39.js
-                        </a>
-                    </p>
-
-                    <p>
-                        <span>jsBIP39 - </span>
-                        <a href="https://github.com/iancoleman/jsbip39" target="_blank">
-                            https://github.com/iancoleman/jsbip39
-                        </a>
-                    </p>
-
-                    <p>
-                        <span>sjcl - </span>
-                        <a href="https://github.com/bitwiseshiftleft/sjcl" target="_blank">
-                            https://github.com/bitwiseshiftleft/sjcl
-                        </a>
-                    </p>
-
-                    <p>
-                        <span>jQuery - </span>
-                        <a href="https://jquery.com/" target="_blank">
-                            https://jquery.com/
-                        </a>
-                    </p>
-
-                    <p>
-                        <span>Twitter Bootstrap - </span>
-                        <a href="http://getbootstrap.com/" target="_blank">
-                            http://getbootstrap.com/
-                        </a>
-                    </p>
-
-                </div>
-            </div>
-
         </div>
 
-        <div class="feedback-container">
-            <div class="feedback">Loading...</div>
-        </div>
 
         <script>(function (root) {
    "use strict";
@@ -1186,9 +969,18 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var word = words[j];
                 var wordIndex = wordlist.indexOf(word);
                 if (wordIndex == -1) {
-                    return {
-                        error: "Word not in wordlist: " + word
+                    wordPrefix = word
+                    console.log ("Cant find exact match for " + wordPrefix + ", looking for that as a prefix");
+
+                    // Try to make this work if we just have the first 4 of a longer word
+                    // (first 4 should be unique)
+                    word = wordlist.find(w => w.startsWith(word)) 
+                    if (word == null) {
+                        return {
+                            error: "Word not in wordlist and cant find prefix: " + word
+                        }
                     }
+                    console.log ("Found " + word + " as a word with prefix " + wordPrefix)
                 }
                 var wordBin = lpad(wordIndex.toString(2), 11);
                 partBin = partBin + wordBin;
@@ -6268,7 +6060,7 @@ exports.BigInteger = BigInteger;
     }
 
     function showCombinedPhrase(partsStr) {
-        // extract parts from string
+        // extract parts (lines) from string
         var partsDirty = partsStr.split("\n");
         var parts = [];
         for (var i=0; i<partsDirty.length; i++) {
@@ -6277,7 +6069,9 @@ exports.BigInteger = BigInteger;
             if (part.length > 0) {
                 parts.push(part);
             }
+            
         }
+
         // convert phrases to word arrays
         var mnemonics = [];
         for (var i=0; i<parts.length; i++) {
@@ -6342,12 +6136,13 @@ exports.BigInteger = BigInteger;
         if (words.length == 0) {
             return "Blank mnemonic";
         }
+
         // Check each word
         for (var i=0; i<words.length; i++) {
             var word = words[i];
             var language = getLanguage(phrase);
             if (WORDLISTS[language].indexOf(word) == -1) {
-                console.log("Finding closest match to " + word);
+                console.log("Did not find exact match for " + word + " - looking for closest match");
                 var nearestWord = findNearestWord(word);
                 return word + " not in wordlist, did you mean " + nearestWord + "?";
             }
@@ -6401,19 +6196,10 @@ exports.BigInteger = BigInteger;
             .hide();
     }
 
+    // Simplicity - use English for seed phrases
     function getLanguage(phrase) {
         var defaultLanguage = "english";
-        // Try to get from existing phrase
-        var language = getLanguageFromPhrase(phrase);
-        // Try to get from url if not from phrase
-        if (language.length == 0) {
-            language = getLanguageFromUrl();
-        }
-        // Default to English if no other option
-        if (language.length == 0) {
-            language = defaultLanguage;
-        }
-        return language;
+        return defaultLanguage;
     }
 
     function getLanguageFromPhrase(phrase) {
@@ -6503,12 +6289,14 @@ exports.BigInteger = BigInteger;
             var word = words[i];
             if (word.length > 0) {
                 noBlanks.push(word);
+                
             }
         }
         return noBlanks;
     }
 
     // TODO look at jsbip39 - mnemonic.joinWords
+    // Hack - hard code English
     function wordArrayToPhrase(words) {
         var phrase = words.join(" ");
         var language = getLanguageFromPhrase(phrase);
